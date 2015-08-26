@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Project Employee Manager</title>
+    <link href="styles.css" rel="stylesheet">
+</head>
+<body>
+<button id="generateProject">Generate Project</button>
+<script id="project-template" type="text/x-handlebars-template">
+    <p>Company Name: {{companyName}}</p>
+    <p>Front End Points: {{frontEndPts}}</p>
+    <p>Client Logic Points: {{clientLogic}}</p>
+    <p>Server Logic Points: {{serverLogic}}</p>
+</script>
+<div id="project"></div>
+<script src="js/jquery-2.1.4.min.js"></script>
+<script src="js/handlebars-v3.0.3.js"></script>
+<script src="js/scripts.js"></script>
+</body>
+</html>
