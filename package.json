@@ -1,0 +1,12 @@
+{
+  "name": "prime_group_nd_01",
+  "version": "1.0.0",
+  "description": "Prime Group Project Mgmt Project",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js"
+  },
+  "author": "Brendan, Liz & Vas",
+  "license": "ISC"
+}
