@@ -1,12 +1,10 @@
 var express = require('express');
-var path = require('path');
+var employee = require('./employeeProfile.js');
 var app = express();
 
 app.get('/', function(req,res,next){
-    res.send("Hello World!")});
-
-//app.use(express.static(path.join(__dirname, './public')));
-//app.use('/scripts', express.static(path.join(__dirname, './node_modules/bootstrap/dist/')));
+    res.send(employee());
+});
 
 
 var server = app.listen(3000, function(){

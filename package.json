@@ -10,6 +10,8 @@
   "author": "Brendan, Liz & Vas",
   "license": "ISC",
   "dependencies": {
+    "bootstrap": "^3.3.5",
+    "chance": "^0.7.6",
     "express": "^4.13.3"
   }
 }
