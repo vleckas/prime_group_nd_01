@@ -6,15 +6,62 @@
     <link href="styles.css" rel="stylesheet">
 </head>
 <body>
-<button class="btn btn-default" id="generateProject">Generate Project</button>
+<div id="container">
+    <div class="row">
+        <div class="col-lg-12">
+            <h1 class="page-header">Project Management Dashboard</h1>
+        </div>
+        <!-- /.col-lg-12 -->
+    </div>
+    <!-- /.row -->
+
+    <div>
+        <button class="btn btn-default btn-primary" id="generateProject">Generate Project</button>
+    </div>
+    <div id="project"></div>
+
+    <div class="row">
+        <div class="col-lg-4">
+            <div id="team"></div>
+        </div>
+    </div>
+
+
+
 <script id="project-template" type="text/x-handlebars-template">
-    <p>Company Name: {{companyName}}</p>
-    <p>Front End Points: {{frontEnd}}</p>
-    <p>Client Logic Points: {{client}}</p>
-    <p>Server Logic Points: {{server}}</p>
+    <div class="row">
+        <div class="col-lg-4">
+            <div class="panel panel-primary">
+                <div class="panel-heading">
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <i class="fa fa-building fa-2x"> Client Project Profile</i>
+                        </div>
+                    </div>
+                </div>
+                    <div class="panel-footer">
+                        <p class="fa fa-info-circle"> Company: {{companyName}}</p>
+                        <div class="clearfix"></div>
+                    </div>
+
+                    <div class="panel-footer">
+                        <p class="fa fa-info-circle"> Front End Points Required: {{frontEnd}}</p>
+                        <div class="clearfix"></div>
+                    </div>
+
+                    <div class="panel-footer">
+                        <p class="fa fa-info-circle"> Client Side Points Required: {{client}}</p>
+                        <div class="clearfix"></div>
+                    </div>
+
+                    <div class="panel-footer">
+                        <p class="fa fa-info-circle"> Server Side Points Required: {{server}}</p>
+                        <div class="clearfix"></div>
+                    </div>
+            </div>
+        </div>
+    </div>
 </script>
-<div id="project"></div>
-<div id="team"></div>
 <script src="js/jquery-2.1.4.min.js"></script>
 <script src="/scripts/js/bootstrap.min.js"></script>
 <script src="js/handlebars-v3.0.3.js"></script>

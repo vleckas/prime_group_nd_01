@@ -21,6 +21,7 @@ $(document).ready(function(){
         $('#team').empty();
         $button.text('Assign Staff');
         $button.attr('id', 'assign');
+        $button.attr('class', 'btn btn-primary')
         $('#project').append($button);
         //$('#members').empty();
     });
@@ -32,16 +33,35 @@ $(document).ready(function(){
     });
 
     $('#team').on('click', '#add', function(){
-        $('#sprints').empty();
+        $('#sprints').remove();
         assignOne();
+        calculateSprints();
     });
 
     function addOne(obj){
+        $('#sprints').empty();
+        for(var prop in obj){
+            if(obj[prop] == 'Front End'){
+                team.frontEnd += obj.points;
+            }
+            if(obj[prop] == 'Client Side'){
+                team.client += obj.points;
+            }
+            if(obj[prop] == 'Server Side'){
+                team.server += obj.points;
+            }
+        }
         team.members.push(obj);
         var $member = obj;
         var $newP = $('<p>');
         $newP.text("Name: " + $member.name + " Skill: " + $member.skill + " Points: " + $member.points);
         $newDiv.append($newP);
+        var sprints = calculateSprints();
+        var $newP2 = $('<p>');
+        $newP2.attr('class', 'span');
+        $newP2.attr('id', 'sprints');
+        $newP2.text("Number of Sprints Required: " + sprints);
+        $('#team').append($newP2);
     }
 
     function addTeam(obj){
@@ -70,17 +90,21 @@ $(document).ready(function(){
 
         var $member = obj;
         var $newP = $('<p>');
-        $newP.text("Name: " + $member.name + " Skill: " + $member.skill + " Points: " + $member.points);
+        //$newP.attr('class', 'panel');
+        $newP.text("Name:\t" + $member.name + " Skill:\t" + $member.skill + " Points:\t" + $member.points);
         $newDiv.append($newP);
 
         //append new team to div, add additional employee button
         $('#team').html($newDiv);
         $button2.text('Add Additional Employee');
         $button2.attr('id', 'add');
+        $button2.attr('class', 'btn btn-primary')
         $('#team').append($button2);
 
         var sprints = calculateSprints();
         var $newP2 = $('<p>');
+        $newP2.attr('class', 'span');
+        $newP2.attr('id', 'sprints');
         $newP2.text("Number of Sprints Required: " + sprints);
         $('#team').append($newP2);
 
@@ -95,7 +119,7 @@ $(document).ready(function(){
             var clientSprint = Math.ceil(project.client/team.client);
             sprints.push(frontEndsprint,serverSprint,clientSprint);
             var maxSprints = getMaxOfArray(sprints);
-
+            console.log(maxSprints);
             return maxSprints;
     };
 
@@ -104,8 +128,7 @@ $(document).ready(function(){
         $.ajax ({
             type: 'GET',
             dataType: 'json',
-            crossDomain: true,
-            url: 'http://127.0.0.1:3000/employee',
+            url: '/employee',
             complete: function() {
                 console.log('ajax complete');
             },

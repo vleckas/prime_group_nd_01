@@ -1,15 +1,41 @@
-/*!
- * Start Bootstrap - SB Admin 2 Bootstrap Admin Theme (http://startbootstrap.com)
- * Code licensed under the Apache License v2.0.
- * For details, see http://www.apache.org/licenses/LICENSE-2.0.
- */
-
 body {
     background-color: #f8f8f8;
 }
 
+.panel {
+    margin: 10px auto;
+}
+
+#container {
+    padding: 0 15px;
+}
+
+#members {
+    padding: 5px;
+    border: 1px solid #005983;
+    border-radius: 5px;
+    margin-bottom: 5px;
+}
+
+.span {
+    font-weight: bold;
+    font-size: 24px;
+}
+
+#project {
+    margin-top: 10px
+}
+
 #wrapper {
     width: 100%;
+}
+
+#team {
+    margin-top: 10px;
+}
+
+#add {
+    margin-bottom: 10px;
 }
 
 #page-wrapper {
