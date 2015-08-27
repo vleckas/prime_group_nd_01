@@ -1,6 +1,11 @@
 var express = require('express');
 var employee = require('./employeeProfile.js');
+var index = require('./routes/index.js');
+var path = require('path');
 var app = express();
+
+
+app.use('/', index);
 
 app.get('/employee', function(req,res,next){
     res.send(employee());
