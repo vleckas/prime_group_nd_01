@@ -2,10 +2,11 @@
 <html>
 <head>
     <title>Project Employee Manager</title>
+    <link href="/scripts/css/bootstrap.min.css" rel="stylesheet">
     <link href="styles.css" rel="stylesheet">
 </head>
 <body>
-<button id="generateProject">Generate Project</button>
+<button class="btn btn-default" id="generateProject">Generate Project</button>
 <script id="project-template" type="text/x-handlebars-template">
     <p>Company Name: {{companyName}}</p>
     <p>Front End Points: {{frontEnd}}</p>
@@ -13,7 +14,9 @@
     <p>Server Logic Points: {{server}}</p>
 </script>
 <div id="project"></div>
+<div id="team"></div>
 <script src="js/jquery-2.1.4.min.js"></script>
+<script src="/scripts/js/bootstrap.min.js"></script>
 <script src="js/handlebars-v3.0.3.js"></script>
 <script src="js/scripts.js"></script>
 </body>

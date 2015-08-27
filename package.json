@@ -12,6 +12,7 @@
   "dependencies": {
     "bootstrap": "^3.3.5",
     "chance": "^0.7.6",
+    "cors": "^2.7.1",
     "express": "^4.13.3"
   }
 }
